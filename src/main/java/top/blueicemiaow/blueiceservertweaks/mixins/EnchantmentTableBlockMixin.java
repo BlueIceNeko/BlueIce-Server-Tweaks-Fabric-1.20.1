@@ -1,0 +1,27 @@
+package top.blueicemiaow.blueiceservertweaks.mixins;
+
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.EnchantmentTableBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import top.blueicemiaow.blueiceservertweaks.api.Config;
+import top.blueicemiaow.blueiceservertweaks.tools.ConfigHelper;
+
+@Mixin(EnchantmentTableBlock.class)
+public abstract class EnchantmentTableBlockMixin {
+    @WrapOperation(
+            method = "isValidBookShelf",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/level/block/state/BlockState;is(Lnet/minecraft/tags/TagKey;)Z",
+                    ordinal = 1
+            )
+    )
+    private static boolean isValidBookShelf(BlockState instance, TagKey tagKey, Operation<Boolean> original) {
+        return original.call(instance, tagKey) || ConfigHelper.get(Config.carpet_transmit_enchantment_power) && original.call(instance, BlockTags.WOOL_CARPETS);
+    }
+}

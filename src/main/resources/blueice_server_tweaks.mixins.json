@@ -1,0 +1,35 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "top.blueicemiaow.blueiceservertweaks.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ServerLevelMixin",
+    "LivingEntityMixin",
+    "PlayerMixin",
+    "NetherPortalBlockMixin",
+    "BedBlockMixin",
+    "RespawnAnchorBlockMixin",
+    "EnchantmentTableBlockMixin",
+    "FarmBlockMixin",
+    "CropBlockMixin",
+    "StemBlockMixin",
+    "SweetBerryBushBlockMixin",
+    "CocoaBlockMixin",
+    "PitcherCropBlockMixin",
+    "SaplingBlockMixin",
+    "MushroomBlockMixin",
+    "CrossbowItemMixin",
+    "ArmorStandItemMixin",
+    "BeaconBlockEntityMixin",
+    "PiglinAiMixin",
+    "EnchantmentHelperMixin",
+    "WeatheringCopperMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

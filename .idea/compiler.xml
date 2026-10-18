@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="&quot;-AoutRefMapFile=E:\BIST\BlueIce Server Tweaks\build\classes\java\main\BlueIceServerTweaks-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=E:\BIST\BlueIce Server Tweaks\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.2198-v2.main.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\BlueIceNeko\.gradle\caches\fabric-loom\1.20.1\loom.mappings.1_20_1.layered+hash.2198-v2\mappings.tiny" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BlueIce_Server_Tweaks.test" options="&quot;-AoutRefMapFile=E:\BIST\BlueIce Server Tweaks\build\classes\java\test\test-BlueIceServerTweaks-refmap.json&quot; -AdefaultObfuscationEnv=named:intermediary -Aquiet=true &quot;-AoutMapFileNamedIntermediary=E:\BIST\BlueIce Server Tweaks\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.2198-v2.test.tiny&quot; -AinMapFileNamedIntermediary=C:\Users\BlueIceNeko\.gradle\caches\fabric-loom\1.20.1\loom.mappings.1_20_1.layered+hash.2198-v2\mappings.tiny" />
+    </option>
+  </component>
+</project>
