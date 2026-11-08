@@ -1,11 +1,6 @@
 package top.blueicemiaow.blueiceservertweaks;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import top.blueicemiaow.blueiceservertweaks.api.Config;
@@ -14,9 +9,6 @@ import top.blueicemiaow.blueiceservertweaks.tools.ConfigHelper;
 import top.blueicemiaow.blueiceservertweaks.tools.Register;
 import top.blueicemiaow.blueiceservertweaks.tools.TranslationHelper;
 
-import java.util.HashMap;
-import java.util.UUID;
-
 public class BlueIceServerTweaks implements ModInitializer {
     public static final String MODID = "blueice_server_tweaks";
     public static final Logger LOGGER = LogManager.getLogger();
@@ -24,12 +16,7 @@ public class BlueIceServerTweaks implements ModInitializer {
     public static final LoggerWrapper WRAPPER = new LoggerWrapper(LOGGER, PREFIX);
     public static final String WILDCARD = "*";
 
-    public static final TagKey<Block> COLLECTABLE = TagKey.create(Registries.BLOCK, ResourceLocation.tryBuild(MODID, "collectable"));
-    public static final TagKey<Item> CAN_DISABLE_SHIELD = TagKey.create(Registries.ITEM, ResourceLocation.tryBuild(MODID, "can_disable_shield"));
-    public static final TagKey<Item> PIGLIN_SAFE_ARMOR = TagKey.create(Registries.ITEM, ResourceLocation.tryBuild(MODID, "piglin_safe_armor"));
-
     public static Config config = null;
-    public static final HashMap<UUID, HashMap<String, Boolean>> permissions = new HashMap<>();
 
     @Override
     public void onInitialize() {

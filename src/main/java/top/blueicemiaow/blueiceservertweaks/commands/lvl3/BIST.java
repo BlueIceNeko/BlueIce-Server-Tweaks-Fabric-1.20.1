@@ -12,7 +12,6 @@ import top.blueicemiaow.blueiceservertweaks.BlueIceServerTweaks;
 import top.blueicemiaow.blueiceservertweaks.api.Config;
 import top.blueicemiaow.blueiceservertweaks.tools.CommandHelper;
 import top.blueicemiaow.blueiceservertweaks.tools.ConfigHelper;
-import top.blueicemiaow.blueiceservertweaks.tools.Post;
 import top.blueicemiaow.blueiceservertweaks.tools.TranslationHelper;
 
 public class BIST {
@@ -59,10 +58,9 @@ public class BIST {
         if (Config.requiresRestart.contains(function)) {
             CommandHelper.log(arguments, TranslationHelper.get("require_restart"));
         }
-        if (Config.hasPost.contains(function)) {
-            switch (function) {
-                case Config.debug_gamerule -> Post.debugGamerule(arguments.getSource().getLevel(), enabled);
-            }
+        Config.PostOperation post = Config.posts.get(function);
+        if (post != null) {
+            post.run(arguments.getSource().getLevel(), enabled);
         }
     }
 }

@@ -15,10 +15,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 import top.blueicemiaow.blueiceservertweaks.api.Config;
-import top.blueicemiaow.blueiceservertweaks.api.Lists;
+import top.blueicemiaow.blueiceservertweaks.api.References;
 import top.blueicemiaow.blueiceservertweaks.tools.ConfigHelper;
 
 public class FletchingTable {
+    public record Stew(String id, int duration) {}
+
     public static InteractionResult setStew(Player entity, Level level, InteractionHand hand, BlockHitResult hitResult) {
         BlockPos pos = hitResult.getBlockPos();
         if (ConfigHelper.get(Config.fletching_table_set_stew) && check(entity, level, pos)) {
@@ -29,7 +31,7 @@ public class FletchingTable {
                 if (offHand.is(Items.POTION)) {
                     CompoundTag potionNbt = offHand.getTag();
                     if (potionNbt != null) {
-                        Lists.Stew stewType = Lists.stews.get(potionNbt.getString("Potion"));
+                        Stew stewType = References.stews.get(potionNbt.getString("Potion"));
                         if (stewType != null) {
                             CompoundTag stewNbt;
                             try {

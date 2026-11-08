@@ -21,9 +21,14 @@
     "MushroomBlockMixin",
     "CrossbowItemMixin",
     "ArmorStandItemMixin",
+    "ArrowItemMixin",
+    "BoneMealItemMixin",
+    "AbstractArrowMixin",
+    "PathfinderMobMixin",
     "BeaconBlockEntityMixin",
     "PiglinAiMixin",
     "EnchantmentHelperMixin",
+    "EnchantmentMenuMixin",
     "WeatheringCopperMixin"
   ],
   "injectors": {
